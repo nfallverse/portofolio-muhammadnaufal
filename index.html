@@ -186,7 +186,7 @@
                   <img
                     id="userProfileImg"
                     src="assets/profile.jpeg"
-                    onerror="if (!this.triedJpg) { this.triedJpg = true; this.src = 'assets/profile.jpg'; } else if (!this.triedRoot) { this.triedRoot = true; this.src = 'profile.jpeg'; } else { this.src = 'assets/profile-placeholder.svg'; }"
+                    onerror="this.onerror=null; this.src='assets/profile.jpg';"
                     alt="Muhammad Naufal — Web Engineer &amp; 3D Artist"
                     class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
@@ -245,7 +245,8 @@
             <div class="relative h-56 rounded-xl overflow-hidden bg-neutral-950 mb-3">
               <img
                 id="thumbNeon"
-                src="assets/p10.png"
+                src="assets/p10.jpg"
+                onerror="this.onerror=null; this.src='assets/p10.png';"
                 alt="Jam Digital IoT Running-Text"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -272,8 +273,7 @@
             <div class="relative h-56 rounded-xl overflow-hidden bg-neutral-950 mb-3">
               <img
                 id="thumbCanyon"
-                src="assets/proyek2.png"
-                onerror="if (!this.triedJpg) { this.triedJpg = true; this.src = 'assets/proyek2.jpg'; } else { this.src = 'assets/props-placeholder.svg'; }"
+                src="assets/props-placeholder.svg"
                 alt="Koleksi Objek Low-Poly Sehari-hari"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
@@ -299,8 +299,7 @@
           <article data-tags="3d" onclick="openProjectModal(2)" class="creation-card sculpted-card p-3 group cursor-pointer">
             <div class="relative h-56 rounded-xl overflow-hidden bg-neutral-950 mb-3">
               <img
-                src="assets/proyek3.png"
-                onerror="if (!this.triedJpg) { this.triedJpg = true; this.src = 'assets/proyek3.jpg'; } else { this.src = 'assets/car-placeholder.svg'; }"
+                src="assets/car-placeholder.svg"
                 alt="Mobil Cruiser Low-Poly"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f1b18" />
+      <stop offset="50%" stop-color="#14110f" />
+      <stop offset="100%" stop-color="#0d0b0a" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ea580c" stop-opacity="0.05" />
+    </linearGradient>
+    <radialGradient id="ring" cx="50%" cy="50%" r="50%">
+      <stop offset="60%" stop-color="#f97316" stop-opacity="0" />
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0.25" />
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bgGrad)" />
+  <circle cx="200" cy="200" r="190" fill="url(#ring)" />
+  <!-- Siluet Avatar Minimalis -->
+  <g fill="none" stroke="#ba7952" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <!-- Kepala -->
+    <circle cx="200" cy="155" r="58" fill="#241e1a" stroke="#e86a33" stroke-width="2.5" />
+    <!-- Kacamata / Builder Vision -->
+    <rect x="168" y="145" width="26" height="18" rx="5" fill="#14110f" stroke="#fb923c" stroke-width="2" />
+    <rect x="206" y="145" width="26" height="18" rx="5" fill="#14110f" stroke="#fb923c" stroke-width="2" />
+    <line x1="194" y1="154" x2="206" y2="154" stroke="#fb923c" stroke-width="2" />
+    <!-- Senyum / Karakter Positif -->
+    <path d="M 188 182 Q 200 190 212 182" stroke="#e5864c" stroke-width="2" />
+    <!-- Bahu / Tubuh -->
+    <path d="M 105 315 C 105 240, 145 228, 200 228 C 255 228, 295 240, 295 315" fill="#241e1a" stroke="#e86a33" stroke-width="2.5" />
+    <!-- Kerah Pakaian -->
+    <path d="M 178 228 L 200 260 L 222 228" stroke="#ba7952" stroke-width="2" />
+  </g>
+  <!-- Lencana Info Penampung Foto -->
+  <rect x="120" y="338" width="160" height="28" rx="14" fill="#14110f" stroke="#e86a33" stroke-width="1.2" opacity="0.9" />
+  <text x="200" y="356" fill="#fb923c" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1.5">
+    FOTO PROFIL
+  </text>
+</svg>
