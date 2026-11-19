@@ -1,0 +1,224 @@
+/* ==========================================================================
+   MUHAMMAD NAUFAL — PORTFOLIO STYLESHEET
+   Themes: Obsidian Ember (Dark) & Warm Titanium Chalk (Light)
+   ========================================================================== */
+
+/* Root CSS Variables for seamless light/dark transitions */
+:root {
+  --bg-primary: #0d0b0a;
+  --bg-secondary: #14110f;
+  --bg-card: rgba(23, 19, 17, 0.92);
+  --bg-card-hover: rgba(31, 26, 23, 0.96);
+  --border-subtle: rgba(232, 106, 51, 0.22);
+  --border-focus: rgba(232, 106, 51, 0.65);
+  --text-primary: #f5f0eb;
+  --text-secondary: #a3988f;
+  --text-muted: #6e645c;
+  --ember-accent: #e86a33;
+  --ember-glow: rgba(232, 106, 51, 0.35);
+  --noise-opacity: 0.035;
+}
+
+html:not(.dark) {
+  --bg-primary: #faf7f4;
+  --bg-secondary: #f0ebe4;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: #ffffff;
+  --border-subtle: rgba(186, 121, 82, 0.28);
+  --border-focus: rgba(217, 92, 34, 0.7);
+  --text-primary: #191614;
+  --text-secondary: #5e554e;
+  --text-muted: #8c8075;
+  --ember-accent: #d95829;
+  --ember-glow: rgba(217, 88, 41, 0.2);
+  --noise-opacity: 0.02;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Tactile Studio Noise Texture */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: var(--noise-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  transition: opacity 0.3s ease;
+}
+
+/* Ambient Radial Glows */
+.ambient-glow-left {
+  position: fixed;
+  top: 5%;
+  left: -150px;
+  width: 500px;
+  height: 600px;
+  background: radial-gradient(circle, var(--ember-glow) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.4s ease;
+}
+
+.ambient-glow-right {
+  position: fixed;
+  bottom: 5%;
+  right: -150px;
+  width: 550px;
+  height: 650px;
+  background: radial-gradient(circle, var(--ember-glow) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.4s ease;
+}
+
+/* Minimalist Navigation Bar */
+.nav-pill {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Modern Card Sculpting */
+.sculpted-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background-color 0.3s ease;
+}
+
+.sculpted-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-focus);
+  box-shadow: 0 18px 40px -12px var(--ember-glow), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Text Embers */
+.text-gradient-ember {
+  background: linear-gradient(135deg, #fba76a 0%, #e86a33 50%, #c24d1a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html:not(.dark) .text-gradient-ember {
+  background: linear-gradient(135deg, #d95829 0%, #b84318 60%, #872e0d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Primary Ember Action Button */
+.btn-ember {
+  background: linear-gradient(135deg, #e86a33 0%, #c9551c 100%);
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(232, 106, 51, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-ember:hover {
+  background: linear-gradient(135deg, #f27943 0%, #db6125 100%);
+  box-shadow: 0 8px 24px rgba(232, 106, 51, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-1.5px);
+}
+
+.btn-ember:active {
+  transform: translateY(0);
+}
+
+/* Secondary Ghost Button */
+.btn-ghost {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.25s ease;
+}
+
+.btn-ghost:hover {
+  border-color: var(--border-focus);
+  color: var(--ember-accent);
+  transform: translateY(-1.5px);
+}
+
+/* Touch Action Utility for 3D Canvas */
+.touch-none {
+  touch-action: none;
+}
+
+/* Pipeline Animated SVG Flow */
+@keyframes flowDash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.pipeline-flow-active {
+  stroke: var(--ember-accent);
+  stroke-dasharray: 6 6;
+  animation: flowDash 1.2s linear infinite;
+  filter: drop-shadow(0 0 5px var(--ember-glow));
+}
+
+.pipeline-flow-idle {
+  stroke: var(--border-subtle);
+  transition: stroke 0.3s ease;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  background: rgba(8, 7, 6, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+html:not(.dark) .modal-backdrop {
+  background: rgba(30, 25, 22, 0.65);
+}
+
+/* Smooth Entrance Scroll Animations */
+.reveal-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+html.js-ready .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+html.js-ready .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-focus);
+}
